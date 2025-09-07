@@ -20,8 +20,61 @@ const theme = extendTheme({
         secondary: orange
       }
     }
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '*::-webkit-scrollbar':{
+            with: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb':{
+            backgroundColor:'#b2bec3',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover':{
+            backgroundColor:'#55efc4'
+          }
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none'
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.875rem'
+        })
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.875rem',
+          '.MuiOutlinedInput-notchedOutline':{
+            borderColor: theme.palette.primary.light
+          },
+          '&:hover':{
+            '.MuiOutlinedInput-notchedOutline':{
+              borderColor: theme.palette.primary.light
+            }
+          },
+          '& fieldset': {
+            borderWidth:'1px: important'
+          }
+        })
+      }
+    }
   }
-  // ...other properties
+  // ..other properties
 })
 
 export default theme
